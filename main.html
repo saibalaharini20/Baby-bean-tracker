@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pregnancy Meal Planner</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <h2>Pregnancy Meal Planner</h2>
+    <form id="mealPlanForm">
+        <label for="gestationPeriod">Enter the gestation period (1, 2, or 3): </label>
+        <input type="text" id="gestationPeriod" name="gestationPeriod" required>
+        <button type="submit">Get Meal Plan</button>
+    </form>
+    <div id="mealPlanOutput"></div>
+
+    <script>
+        // Define meal plans for each trimester
+        const mealPlans = {
+            1: "First trimester meal plan: Include foods rich in folate and iron.",
+            2: "Second trimester meal plan: Focus on balanced nutrition with increased protein.",
+            3: "Third trimester meal plan: Emphasize foods high in calcium and omega-3 fatty acids."
+        };
+
+        // Function to get meal plan based on gestation period input
+        function getMealPlan(gestationPeriod) {
+            gestationPeriod = parseInt(gestationPeriod); // Convert input to integer
+            if (!isNaN(gestationPeriod) && mealPlans[gestationPeriod]) {
+                return mealPlans[gestationPeriod];
+            } else {
+                return "Meal plan not available for this gestation period.";
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('mealPlanForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const gestationPeriod = document.getElementById('gestationPeriod').value;
+            const mealPlanOutput = document.getElementById('mealPlanOutput');
+            mealPlanOutput.textContent = getMealPlan(gestationPeriod);
+        });
+    </script>
+</body>
+</html>
