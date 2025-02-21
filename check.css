@@ -1,0 +1,56 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #db2f2f;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+}
+
+ul.checklist {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.checklist li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+ul.checklist li:last-child {
+    border-bottom: none;
+}
+
+ul.checklist input[type="checkbox"] {
+    margin-right: 15px;
+}
+
+ul.checklist label {
+    font-size: 1.1em;
+    color: #333;
+}
+
+ul.checklist input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #999;
+}
